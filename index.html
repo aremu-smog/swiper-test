@@ -7,34 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
   <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="../package/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
 
   <!-- Demo styles -->
   <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
-
-    .swiper-container {
+    
+    .swiper-container, .home-swiper-container {
       width: 100%;
-      height: 100%;
+      height: 65vh;
+    }
+
+    .home-swiper-container .swiper-wrapper{
+        max-width: 1300px;
     }
 
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      background: #fff;
+      background: #CF1A2D;
 
       /* Center slide text vertically */
       display: -webkit-box;
@@ -50,55 +40,229 @@
       -webkit-align-items: center;
       align-items: center;
     }
+    .home-swiper-container .swiper-slide {
+        background: #072681;
+        width: 50%;
+    }
+    .swiper-slide h1 {
+        color: white;
+        position: absolute;
+        filter: none;
+        opacity: 1;
+        z-index: 2;
+        bottom: 50px;
+        font-family: 'GTSuper Display';
+        font-weight: 600;
+        width: 60%;
+        font-size: 3em;
+    }
+    .swiper-slide img {
+        opacity: 0.8;  
+        width: 100%;
+        object-position: bottom center;
+        object-fit: cover;
+    }
+    .swiper-pagination, .home-swiper-pagination{
+        background: #072681;
+        padding: 2em ;
+        width: 100% ;
+        display: flex;
+        justify-content: space-evenly;  
 
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+        margin: 0 2em;
+    }
     .swiper-pagination-bullet {
-      width: 20px;
-      height: 20px;
+        display: inline-block;
+      width: auto;
+      height: auto;
+      background: transparent;
       text-align: center;
+      font-family: 'IBM Plex Sans';
       line-height: 20px;
-      font-size: 12px;
-      color: #000;
-      opacity: 1;
-      background: rgba(0, 0, 0, 0.2);
+      font-size: 15px;
+      color: #fff;
+      border-radius: 0;
+      border: none;
+      outline: none;
+
     }
 
+    .swiper-pagination-bullet .progressBar{
+        height: 2px;
+        background: rgba(255,255,255,0.5);
+        width: 100%;
+        position: relative;
+        border-radius: 2px;
+        margin-top: 4px;
+    }
+     .swiper-pagination-bullet .progressBar .progress{
+         height: 2px;
+        background: #fff;
+        width: 0%;
+        position: absolute;
+        transition: width 3s ease-out;
+    }
     .swiper-pagination-bullet-active {
       color: #fff;
-      background: #007aff;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active .progressBar .progress{
+        width: 100%;
+    }
+    
+    @media screen and (max-width: 468px){
+        .swiper-container {
+      height: 55vh;
+    }
+        .swiper-slide h1 {
+        width: 90%;
+        font-size: 1.5em;
+    }
+     .swiper-slide img {
+        opacity: 0.8;  
+        height:  100%;
+        object-position: bottom center;
+        object-fit: cover;
+    }
+    .swiper-pagination-bullet{
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .swiper-pagination-bullet .progressBar{
+      margin-top: 2px;  
+    }
+    }
+
+.home-swiper-container .swiper-slide .row{
+    display: flex;
+    text-align: left;
+    width: 100%;
+}
+.home-swiper-container .swiper-slide .row .image, .home-swiper-container .swiper-slide .row .title{
+    width: 50%;
+}
+.home-swiper-container .swiper-slide .row .image{
+    height: 300px;
+}
+.home-swiper-container .swiper-slide .row img{
+    opacity: 1;
+}
+    .home-swiper-pagination{
+        width: 70%;
     }
   </style>
 </head>
 
 <body>
-  <!-- Swiper -->
-  <div class="swiper-container">
+<!-- <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-      <div class="swiper-slide">Slide 10</div>
+      <div class="swiper-slide">
+      <h1> Home, sweet home! <br/>Home, clean home!</h1>
+      <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-153-e1603483354496.png" />
+      </div>
+      <div class="swiper-slide">
+        <h1>Residential Homes</h1>
+        <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-152-e1603483425996.png" />
+      </div>
+
+      <div class="swiper-slide">
+        <h1>Vacation Homes</h1>
+        <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-151.png" />
+      </div>
+
+      <div class="swiper-slide">
+        <h1>Domestic Staff</h1>
+        <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-150.png" />
+      </div>
     </div>
     <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
+<!--    
   </div>
+ <div class="swiper-pagination"></div>
+  </div> -->
 
+<br/><br /><br/>
+<div class="home-swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+      <div class="row">
+        <div class="image">
+              <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-153-e1603483354496.png" />
+        </div>
+        <div class="title">
+            <h1>Enjoy your free time while we take care of your chaos.</h1>
+        </div>
+      </div>
+      
+    
+      </div>
+      <div class="swiper-slide">
+        <div class="row">
+        <div class="image">
+              <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-153-e1603483354496.png" />
+        </div>
+        <div class="title">
+            <h1> Enjoy your free time while we clean your home and offices.</h1>
+        </div>
+      </div>
+      
+      </div>
+
+      <div class="swiper-slide">
+         <div class="row">
+        <div class="image">
+              <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-153-e1603483354496.png" />
+        </div>
+        <div class="title">
+            <h1> Take time off to rest while we take care of your kids.</h1>
+        </div>
+      </div>
+      
+      </div>
+
+      <div class="swiper-slide">
+         <div class="row">
+        <div class="image">
+              <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-153-e1603483354496.png" />
+        </div>
+        <div class="title">
+            <h1> Enjoy your events while we take care of your guests.</h1>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+   
+  </div>
+ <div class="home-swiper-pagination"></div>
+</div>
   <!-- Swiper JS -->
-  <script src="../package/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
 
   <!-- Initialize Swiper -->
   <script>
+    const slides = ["Home Management", "Residential Services", "Vacation Homes", "Dosmetic Staff"]
+     const home_slides = ["Cleaning", "Babysitting", "Hospitality", "Personal Assistance"]
     var swiper = new Swiper('.swiper-container', {
+      autoplay: true,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
         renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
+          return '<span class="' + className + '">'+slides[index]+'<div class="progressBar"><div class="progress"></div></div></span>';
+        },
+      },
+    });
+
+    var homeSwiper = new Swiper('.home-swiper-container', {
+      autoplay: true,
+      pagination: {
+        el: '.home-swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">'+home_slides[index]+'<div class="progressBar"><div class="progress"></div></div></span>';
         },
       },
     });
