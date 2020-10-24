@@ -12,7 +12,7 @@
   <!-- Demo styles -->
   <style>
     
-    .swiper-container, .home-swiper-container {
+     .home-swiper-container {
       width: 100%;
       height: 65vh;
     }
@@ -156,32 +156,6 @@
 </head>
 
 <body>
-<!-- <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-      <h1> Home, sweet home! <br/>Home, clean home!</h1>
-      <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-153-e1603483354496.png" />
-      </div>
-      <div class="swiper-slide">
-        <h1>Residential Homes</h1>
-        <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-152-e1603483425996.png" />
-      </div>
-
-      <div class="swiper-slide">
-        <h1>Vacation Homes</h1>
-        <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-151.png" />
-      </div>
-
-      <div class="swiper-slide">
-        <h1>Domestic Staff</h1>
-        <img src="https://icemanservices.uk/wp-content/uploads/2020/10/Mask-Group-150.png" />
-      </div>
-    </div>
-    <!-- Add Pagination -->
-<!--    
-  </div>
- <div class="swiper-pagination"></div>
-  </div> -->
 
 <br/><br /><br/>
 <div class="home-swiper-container">
@@ -243,19 +217,9 @@
 
   <!-- Initialize Swiper -->
   <script>
-    const slides = ["Home Management", "Residential Services", "Vacation Homes", "Dosmetic Staff"]
+    
      const home_slides = ["Cleaning", "Babysitting", "Hospitality", "Personal Assistance"]
-    var swiper = new Swiper('.swiper-container', {
-      autoplay: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">'+slides[index]+'<div class="progressBar"><div class="progress"></div></div></span>';
-        },
-      },
-    });
-
+ 
     var homeSwiper = new Swiper('.home-swiper-container', {
       autoplay: true,
       pagination: {
